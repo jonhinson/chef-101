@@ -1,19 +1,9 @@
 {
-  "apps": [
-    "beast",
-    "mephisto"
-  ],
-  "user": "ez",
   "gems": [
-    {
-      "name": "rake",
-      "version": "0.8.3"
-    },
-    {
-	  "name": "tmm1-amqp",
-	  "source": "http://gems.github.com",
-	  "version": "0.6.0"
-    }
+    { "name": "rake" },
+    { "name": "fastthread" },
+    { "name": "passenger" },
+    
   ],
-  "recipes": ["main"]
+  "recipes": ["gems", "passenger"]
 }
