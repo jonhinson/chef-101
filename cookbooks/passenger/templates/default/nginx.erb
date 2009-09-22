@@ -61,12 +61,12 @@
 #------------------------------------------------------------------------------
 #                               Consts
 #------------------------------------------------------------------------------
-PATH=<%= @load[:nginx][:dir] %>/sbin:/sbin:/bin:/usr/sbin:/usr/bin
-DAEMON=<%= @load[:nginx][:dir] %>/sbin/nginx
+PATH=<%= @node[:nginx][:dir] %>/sbin:/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON=<%= @node[:nginx][:dir] %>/sbin/nginx
 NAME=nginx
 DESCRIPTION="Nginx Server..."
  
-PIDSPATH=<%= @load[:nginx][:dir] %>/logs
+PIDSPATH=<%= @node[:nginx][:dir] %>/logs
 PS=$NAME				#the process, which happens to be the NAME
 PIDFILE=$NAME.pid			#pid file
 RUNAS=root				#user to run as
