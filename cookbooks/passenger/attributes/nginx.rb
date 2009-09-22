@@ -2,15 +2,15 @@ nginx Mash.new unless attribute?("nginx")
  
 case platform
 when "debian","ubuntu"
-  nginx[:dir] = "/etc/nginx"
-  nginx[:log_dir] = "/var/log/nginx"
-  nginx[:user] = "www-data"
-  nginx[:binary] = "/usr/sbin/nginx"
+  nginx[:dir] = "/etc/nginx" unless nginx.has_key?(:dir)
+  nginx[:log_dir] = "/var/log/nginx" unless nginx.has_key?(:log_dir)
+  nginx[:user] = "www-data" unless nginx.has_key?(:user)
+  nginx[:binary] = "/usr/sbin/nginx" unless nginx.has_key?(:binary)
 else
-  nginx[:dir] = "/etc/nginx"
-  nginx[:log_dir] = "/var/log/nginx"
-  nginx[:user] = "www-data"
-  nginx[:binary] = "/usr/sbin/nginx"
+  nginx[:dir] = "/etc/nginx" unless nginx.has_key?(:dir)
+  nginx[:log_dir] = "/var/log/nginx" unless nginx.has_key?(:log_dir)
+  nginx[:user] = "www-data" unless nginx.has_key?(:user)
+  nginx[:binary] = "/usr/sbin/nginx" unless nginx.has_key?(:binary)
 end
  
 nginx[:gzip] = "on" unless attribute?("nginx_gzip")
