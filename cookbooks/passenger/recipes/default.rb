@@ -32,6 +32,11 @@ template "#{node[:nginx][:dir]}/sites-available/default" do
   mode 0644
 end
 
+link "#{node[:nginx][:dir]}/sites-enabled/default" do
+  to "#{node[:nginx][:dir]}/sites-available/default"
+  link_type :symbolic
+end
+
 template "/etc/init.d/nginx" do
   source "nginx.erb"
   owner "root"
