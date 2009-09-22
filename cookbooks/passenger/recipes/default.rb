@@ -10,16 +10,14 @@ execute "run-install-passenger-and-nginx" do
   notifies :run, [ resources(:execute => "install-passenger-and-nginx") ], :immediately
 end
 
-template "nginx.conf" do
-  path "#{node[:nginx][:dir]}/nginx.conf"
+template "#{node[:nginx][:dir]}/nginx.conf" do
   source "nginx.conf.erb"
   owner "root"
   group "root"
   mode 0644
 end
 
-template "sdefault-site" do
-  path "#{node[:nginx][:dir]}/sites-available/default"
+template "#{node[:nginx][:dir]}/sites-available/default" do
   source "default-site.erb"
   owner "root"
   group "root"
