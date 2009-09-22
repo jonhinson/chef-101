@@ -2,7 +2,7 @@ nginx Mash.new unless attribute?("nginx")
  
 case platform
 when "debian","ubuntu"
-  nginx[:dir] = "/etc/nginx" unless attribute?("dir")
+  nginx['dir'] = "/etc/nginx" unless attribute?("dir")
   nginx[:log_dir] = "/var/log/nginx" unless attribute?("log_dir")
   nginx[:user] = "www-data" unless attribute?("user")
   nginx[:binary] = "/usr/sbin/nginx" unless attribute?("binary")
