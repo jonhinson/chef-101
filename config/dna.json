@@ -1,9 +1,0 @@
-{
-  "gems": [
-    { "name": "rake" },
-    { "name": "fastthread" },
-    { "name": "passenger" },
-    
-  ],
-  "recipes": ["gems", "passenger"]
-}
