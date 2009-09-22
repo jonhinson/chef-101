@@ -1,7 +1,7 @@
 gem_package 'passenger'
 
 execute "install-passenger-and-nginx" do
-  command "passenger-install-nginx-module --auto --auto-download --prefix=/opt/nginx"
+  command "passenger-install-nginx-module --auto --auto-download --prefix=#{node[:nginx][:dir]}"
   action :nothing
 end
 
