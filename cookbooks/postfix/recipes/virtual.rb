@@ -11,7 +11,7 @@ end
 template "/etc/postfix/virtual" do
   source "virtual.erb"
   
-  command "create virtual mappings"
+  command "echo create virtual mappings"
   notifies :run, [ resources(:execute => "update-postfix-virtual-domains") ], :immediately
   notifies :reload, resources(:service => "postfix")
 end
