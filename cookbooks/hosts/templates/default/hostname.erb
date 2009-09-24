@@ -1,0 +1,5 @@
+<% if @node[:hosts][:entries] %>
+<% @node[:hosts][:entries].each do |h| %>
+<%= h.last %>
+<% end %>
+<% end %>
