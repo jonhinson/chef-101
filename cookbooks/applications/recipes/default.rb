@@ -25,11 +25,11 @@ end
 node[:apps].each do |app|
   
   cap_directories = [
-    "/var/www/#{app}/shared",
-    "/var/www/#{app}/shared/config",
-    "/var/www/#{app}/shared/system",
-    "/var/www/#{app}/releases",
-    "/var/www/#{app}/current"
+    "/var/www/#{app[:name]}/shared",
+    "/var/www/#{app[:name]}/shared/config",
+    "/var/www/#{app[:name]}/shared/system",
+    "/var/www/#{app[:name]}/releases",
+    "/var/www/#{app[:name]}/current"
   ]
   
   cap_directories.each do |dir|
@@ -40,7 +40,7 @@ node[:apps].each do |app|
     end
   end
   
-  template "#{node[:nginx][:dir]}/sites-available/#{app}" do
+  template "#{node[:nginx][:dir]}/sites-available/#{app[:name]}" do
     source "app.conf.erb"
     owner "root"
     group "root"
@@ -50,8 +50,8 @@ node[:apps].each do |app|
     })
   end
 
-  link "#{node[:nginx][:dir]}/sites-enabled/#{app}" do
-    to "#{node[:nginx][:dir]}/sites-available/#{app}"
+  link "#{node[:nginx][:dir]}/sites-enabled/#{app[:name]}" do
+    to "#{node[:nginx][:dir]}/sites-available/#{app[:name]}"
     link_type :symbolic
   end
   
