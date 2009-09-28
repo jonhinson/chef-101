@@ -83,7 +83,7 @@ support:	postmaster
 decode:		root
 
 # Person who should get root's mail
-root:		mark@37signals.com
+root: jon@<%= @node[:postfix][:myorigin] %>
 
 # Generic bit-bucket
 devnull:	/dev/null

@@ -15,6 +15,3 @@ end
 service "postfix" do
   action :start
 end
-
-
-include_recipe "postfix::virtual"
