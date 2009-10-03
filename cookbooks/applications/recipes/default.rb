@@ -28,8 +28,7 @@ node[:apps].each do |app|
     "/var/www/#{app[:name]}/shared",
     "/var/www/#{app[:name]}/shared/config",
     "/var/www/#{app[:name]}/shared/system",
-    "/var/www/#{app[:name]}/releases",
-    "/var/www/#{app[:name]}/current"
+    "/var/www/#{app[:name]}/releases"
   ]
   
   cap_directories.each do |dir|
