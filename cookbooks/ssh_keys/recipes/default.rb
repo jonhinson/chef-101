@@ -24,4 +24,9 @@ node[:ssh_keys].each do |key|
       :public_key => key[:public]
     })
   end
+  
+  execute "add ssh key" do
+    command "ssh-add #{key[:name]}"
+    action :nothing
+  end
 end
