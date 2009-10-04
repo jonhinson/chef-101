@@ -45,7 +45,7 @@ end
  
 desc "Update recipes"
 task :update_recipes do
-  run "cd #{deploy_to} && rake install"
+  run "cd #{deploy_to} && git pull"
 end
  
 desc "Create tarball for chef solo"

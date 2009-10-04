@@ -1,4 +1,10 @@
 node[:ssh_keys].each do |key|
+  directory "~/.ssh" do
+    owner "root"
+    group "root"
+    mode 0755
+  end
+  
   template "~/.ssh/#{key[:name]}" do
     source "private_key.erb"
     owner "root"
