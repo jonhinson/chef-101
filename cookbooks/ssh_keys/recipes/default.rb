@@ -16,7 +16,7 @@ node[:ssh_keys].each do |key|
   end
   
   template "/root/.ssh/#{key[:name]}.pub" do
-    source "public_key.erb"
+    source "public_key.pub.erb"
     owner "root"
     group "root"
     mode 0644
