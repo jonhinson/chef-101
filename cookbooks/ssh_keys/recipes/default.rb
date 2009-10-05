@@ -9,7 +9,7 @@ node[:ssh_keys].each do |key|
     source "private_key.erb"
     owner "root"
     group "root"
-    mode 0644
+    mode 0600
     variables({
       :private_key => key[:private]
     })
@@ -19,7 +19,7 @@ node[:ssh_keys].each do |key|
     source "public_key.pub.erb"
     owner "root"
     group "root"
-    mode 0644
+    mode 0600
     variables({
       :public_key => key[:public]
     })
